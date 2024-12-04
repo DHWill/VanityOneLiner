@@ -20,7 +20,7 @@ check_repo() {
     if [ "$LOCAL_COMMIT" != "$REMOTE_COMMIT" ]; then
         echo "Changes detected in the remote repository."
         # Pull the latest changes
-        git pull origin "$REMOTE_BRANCH" || { echo "Error: Failed to pull changes."; exit 1; }
+        git pull origin "$REMOTE_BRANCH" || { echo "Error: Failed to pull changes."; }
         # Run the specified script
         bash "$SCRIPT_TO_RUN" &
     else
