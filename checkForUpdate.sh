@@ -1,8 +1,8 @@
 #!/bin/bash
 # Configuration
-REPO_DIR="/home/pi/vanityOneLiner"   # local repository path
+REPO_DIR="/home/pi/VanityOneLiner"   # local repository path
 REMOTE_BRANCH="main"                 # remote branch 
-SCRIPT_TO_RUN="/home/pi/vanityOneLiner/runCameraFullScreen.sh" # script to run
+SCRIPT_TO_RUN="/home/pi/VanityOneLiner/runCameraFullScreen.sh" # script to run
 CHECK_INTERVAL=5
 
 chmod +x $SCRIPT_TO_RUN
