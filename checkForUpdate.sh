@@ -7,7 +7,9 @@ CHECK_INTERVAL=5
 
 chmod +x $SCRIPT_TO_RUN
 cd "$REPO_DIR" || { echo "Error: Repository directory does not exist."; exit 1; }
--x "$SCRIPT_TO_RUN" &
+
+#run script on start 
+bash "$SCRIPT_TO_RUN" &
 #check repo for changes pull if nescessary re-run script
 check_repo() {
     # Fetch the latest changes from the remote repository
@@ -20,12 +22,7 @@ check_repo() {
         # Pull the latest changes
         git pull origin "$REMOTE_BRANCH" || { echo "Error: Failed to pull changes."; exit 1; }
         # Run the specified script
-        if [ -x "$SCRIPT_TO_RUN" & ]; then
-            echo "Running script: $SCRIPT_TO_RUN"
-            "$SCRIPT_TO_RUN"
-        else
-            echo "Error: Script $SCRIPT_TO_RUN is not executable."
-            exit 1
+        bash "$SCRIPT_TO_RUN" &
         fi
     else
         echo "No changes detected in the remote repository."
