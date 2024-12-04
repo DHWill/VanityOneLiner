@@ -23,7 +23,6 @@ check_repo() {
         git pull origin "$REMOTE_BRANCH" || { echo "Error: Failed to pull changes."; exit 1; }
         # Run the specified script
         bash "$SCRIPT_TO_RUN" &
-        fi
     else
         echo "No changes detected in the remote repository."
     fi
